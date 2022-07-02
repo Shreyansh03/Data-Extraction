@@ -1,0 +1,46 @@
+﻿function myFunction() {
+   var ss=SpreadsheetApp.openByUrl("https://docs.google.com/spreadsheets/d/17Vs4_8kQdU_CRJo_j_IOMdROZtV1chB57JEb6bEXWfw/edit#gid=0");
+   var task=ss.getActiveSheet();
+   var sponsorship=operations=web=pr=design=ideation="";
+
+
+    var numberofrows=task.getLastRow();
+    var panel1=0;
+    var panel2=0;
+    var total=0;
+   for(var i=2;i<=numberofrows;i++){
+     total++;
+     if(task.getRange(i,5).getValue()!=""){
+       operations=operations+task.getRange(i,3).getValue()+"\n";
+       panel1++;
+     }
+     if(task.getRange(i,6).getValue()!=""){
+       sponsorship=sponsorship+task.getRange(i,3).getValue()+"\n";
+       panel1++;
+     }
+     if(task.getRange(i,7).getValue()!=""){
+       design=design+task.getRange(i,3).getValue()+"\n";
+       panel2++;
+     }
+     if(task.getRange(i,8).getValue()!=""){
+       web=web+task.getRange(i,3).getValue()+"\n";
+       panel2++;
+     }
+     if(task.getRange(i,9).getValue()!=""){
+       ideation=ideation+task.getRange(i,3).getValue()+"\n";
+       panel2++;
+     }
+     if(task.getRange(i,10).getValue()!=""){
+       pr=pr+task.getRange(i,3).getValue()+"\n";
+       panel1++;
+     }
+     
+   }
+   console.log(total,panel1,panel2);
+   console.log("web = ",web);
+   console.log("operations = ",operations);
+   console.log("sponsorship = ",sponsorship);
+   console.log("ideation = ",ideation);
+   console.log("pr = ",pr);
+   console.log("design = ",design); 
+}
